@@ -3,8 +3,6 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Window/Event.hpp>
 
-#include <filesystem>
-
 #include "Tank.h"
 #include "GameMap.h"
 
@@ -32,9 +30,7 @@ int main()
 	game_map.emplaceEnemy(Vector2f(size_of_item * (size_in_items / 4), size_of_item * 3), size_of_item, Direction::FRONT, Color::Red);
 	game_map.emplaceEnemy(Vector2f(size_of_item * (size_in_items / 10), size_of_item * 3), size_of_item, Direction::LEFT, Color::Red);
 
-	filesystem::path workdir = filesystem::current_path() / "map.txt";
-
-	if (!game_map.ParseFromFile(workdir))
+	if (!game_map.ParseFromFile("map.txt"))
 	{
 		cerr << "Error: file named \"map.txt\" unable to open" << endl;
 	}

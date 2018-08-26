@@ -66,6 +66,6 @@ public:
 
 	void drawAllWith(RenderWindow& win);
 
-	bool ParseFromFile(filesystem::path& filename);
+	bool ParseFromFile(const char* filename);
 };
 

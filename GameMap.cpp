@@ -136,7 +136,7 @@ void GameMap::drawAllWith(RenderWindow& win)
 	this->drawEnemiesWith(win);
 }
 
-bool GameMap::ParseFromFile(filesystem::path& filename)
+bool GameMap::ParseFromFile(const char* filename)
 {
 	ifstream ifs(filename, ios_base::in);
 
